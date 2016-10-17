@@ -14,15 +14,21 @@ public class MainPanel extends JPanel implements ActionListener
     private JTextField fNameField;
     private JTextField lNameField;
     private JSlider ageSlider;
+    private JLabel summaryLabel;
+    
+    Person person;
     
     MainPanel()
     {
         GridLayout grid = new GridLayout(2, 4);
         setLayout(grid);
         
+        person = new Person();
+        
         fNameField = new JTextField("Please enter your first name");
         add(fNameField);
-        
+        person.setfName();
+                
         saveInfoButton = new JButton("Save Info");
         saveInfoButton.addActionListener(this);
         add(saveInfoButton);
@@ -32,12 +38,17 @@ public class MainPanel extends JPanel implements ActionListener
         ageSlider.setPaintTicks(true);
         ageSlider.setPaintLabels(true);
         add(ageSlider);
+        person.setAge();
         
         lNameField = new JTextField("Please enter your last name");
-        add(lNameField); 
+        add(lNameField);
+        person.setlName();
               
         loadInfoButton = new JButton("Load Info");
         add(loadInfoButton);
+        
+        summaryLabel = new JLabel("No info yet.");
+        add(summaryLabel); 
     }
 
     @Override
@@ -47,8 +58,7 @@ public class MainPanel extends JPanel implements ActionListener
         
         if(eventSource == saveInfoButton)
         {
-//            summaryLabel.setText(fNameField.getText() + " " + lNameField.getText() + " " + ageSlider.getValue());
-            Person person = new Person()
+            summaryLabel.setText(person.getInfo());
         }
     }
 }

@@ -1,4 +1,4 @@
-public class Person 
+public class Person
 {
     private String fName;
     private String lName;
@@ -9,13 +9,27 @@ public class Person
         
     }
     
-     void setfName()
+    public String setfName()
     {
         this.fName = fName;
+        return fName;
     }
     
-     void setlName()
-     {
-         this.lName = lName;
-     }
+    public String setlName()
+    {
+        this.lName = lName;
+        return lName;
+    }
+    
+    public int setAge()
+    {
+        this.age = age;
+        return age;
+    }
+    
+    public String getInfo()
+    {
+        return fName + " " + lName + " " + age;
+    }
+            
 }
