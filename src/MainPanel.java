@@ -11,9 +11,9 @@ public class MainPanel extends JPanel implements ActionListener
 {
     private JButton saveInfoButton;
     private JButton loadInfoButton;
-    private JTextField fNameField;
-    private JTextField lNameField;
-    private JSlider ageSlider;
+    public static JTextField fNameField;
+    public static JTextField lNameField;
+    public static JSlider ageSlider;
     private JLabel summaryLabel;
     
     Person person;
@@ -38,12 +38,12 @@ public class MainPanel extends JPanel implements ActionListener
         ageSlider.setPaintTicks(true);
         ageSlider.setPaintLabels(true);
         add(ageSlider);
-        person.setAge();
+        person.setAge();  
         
         lNameField = new JTextField("Please enter your last name");
         add(lNameField);
-        person.setlName();
-              
+        person.setlName();  
+        
         loadInfoButton = new JButton("Load Info");
         add(loadInfoButton);
         

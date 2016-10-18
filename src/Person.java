@@ -1,35 +1,34 @@
 public class Person
 {
-    private String fName;
-    private String lName;
-    private int age;
+    public String fName;
+    public String lName;
+    public int age;
     
     Person()
     {    
-        
     }
     
     public String setfName()
     {
-        this.fName = fName;
-        return fName;
+        return fName = MainPanel.fNameField.getText();
     }
     
     public String setlName()
     {
-        this.lName = lName;
-        return lName;
+        return lName = MainPanel.lNameField.getText();
     }
     
     public int setAge()
     {
-        this.age = age;
-        return age;
+        return age = MainPanel.ageSlider.getValue();
     }
     
     public String getInfo()
     {
+        fName = MainPanel.fNameField.getText();
+        lName = MainPanel.lNameField.getText();
+        age = MainPanel.ageSlider.getValue();
+        
         return fName + " " + lName + " " + age;
-    }
-            
+    }        
 }
